@@ -1,6 +1,6 @@
 package introducao.repeticao;
 
-public class Aula06EstruturaDeRepeticao01 {
+public class EstruturaDeRepeticao01 {
     public static void main(String[] args) {
         // while, do while, for
         int count = 0;

@@ -1,6 +1,6 @@
 package introducao.condicionais;
 
-public class Aula05EstruturasCondicionais01 {
+public class EstruturasCondicionais01 {
     public static void main(String[] args) {
         int idade = 15;
         boolean isAutorizadoBeber = idade >= 18;

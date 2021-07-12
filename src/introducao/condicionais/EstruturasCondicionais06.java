@@ -1,6 +1,6 @@
 package introducao.condicionais;
 
-public class Aula05EstruturasCondicionais06 {
+public class EstruturasCondicionais06 {
     public static void main(String[] args) {
         byte dia = 3;
         switch (dia) {

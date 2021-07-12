@@ -1,6 +1,6 @@
 package introducao.condicionais;
 
-public class Aula05EstruturasCondicionais03 {
+public class EstruturasCondicionais03 {
     public static void main(String[] args) {
         double salario = 3000;
         String mensagemDoar = "Vou dar 500 ao DevDOJO";

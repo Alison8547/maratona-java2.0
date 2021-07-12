@@ -1,6 +1,6 @@
 package introducao.tiposprimitivos;
 
-public class Aula01OlaDevDojo {
+public class OlaDevDojo {
     public static void main(String[] args) {
         System.out.println("Hello World!");
     }

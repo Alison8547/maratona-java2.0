@@ -1,6 +1,6 @@
 package introducao.repeticao;
 
-public class Aula06EstruturaDeRepeticao04 {
+public class EstruturaDeRepeticao04 {
     public static void main(String[] args) {
         // Dado o valor de um carro, descubra em quantas ele pode ser parcelado
         // Condição valorParcela >= 1000

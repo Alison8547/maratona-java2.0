@@ -1,6 +1,6 @@
 package introducao.condicionais;
 
-public class Aula05EstruturasCondicionais04 {
+public class EstruturasCondicionais04 {
     public static void main(String[] args) {
         double salario = 80000;
         double imposto1 = 9.70 / 100;

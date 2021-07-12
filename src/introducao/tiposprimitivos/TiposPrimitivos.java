@@ -1,6 +1,6 @@
 package introducao.tiposprimitivos;
 
-public class Aula02TiposPrimitivos {
+public class TiposPrimitivos {
     public static void main(String[] args) {
         // int, double, float, char, long, boolean, short
         int idade = (int) 10000000000L; // cast porem tá maior que o int então ele vai colocar um número estranho

@@ -1,6 +1,6 @@
 package introducao.tiposprimitivos;
 
-public class Aula03TiposPrimitivosExercicio {
+public class TiposPrimitivosExercicio {
     public static void main(String[] args) {
 
         String nome = "Alison";
