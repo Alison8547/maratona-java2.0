@@ -13,8 +13,16 @@ public class ArraysMultidimensionais04 {
         dias[1][2] = 15;
 
         for (int i = 0; i < dias.length; i++) {
-            for (int j = 0; j < dias[0].length; j++) {
+            for (int j = 0; j < dias[i].length; j++) {
                 System.out.println(dias[i][j]);
+            }
+        }
+
+        System.out.println();
+
+        for (int[] arrayBase : dias) {
+            for (int num : arrayBase) {
+                System.out.println(num);
             }
         }
     }
