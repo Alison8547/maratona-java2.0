@@ -15,6 +15,8 @@ public class CarroTest01 {
         carro2.modelo = "Volkswagen";
         carro2.ano = 2000;
 
+        carro1 = carro2; // Agora carro1 está fazendo referência a carro2
+
         System.out.println("Carro1");
         System.out.println(carro1.nome);
         System.out.println(carro1.modelo);
