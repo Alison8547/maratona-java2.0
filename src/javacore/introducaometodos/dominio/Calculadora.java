@@ -29,4 +29,12 @@ public class Calculadora {
         }
         System.out.println(num1 / num2);
     }
+
+    public void alteraDoisNumeros(int num1, int num2) {
+        num1 = 50;
+        num2 = 100;
+        System.out.println("Dentro do altera dois numeros");
+        System.out.println("Num1: " + num1);
+        System.out.println("Num2: " + num2);
+    }
 }
