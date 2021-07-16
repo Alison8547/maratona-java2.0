@@ -9,6 +9,8 @@ public class PessoaTest01 {
         pessoa.setNome("Juliana");
         pessoa.setIdade(20);
 
+    //    pessoa.imprime();
+
         System.out.println(pessoa.getNome());
         System.out.println(pessoa.getIdade());
     }
