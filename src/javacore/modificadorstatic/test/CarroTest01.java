@@ -8,7 +8,7 @@ public class CarroTest01 {
         Carro carro2 = new Carro("SkyLine", 300);
         Carro carro3 = new Carro("Ferrari", 290);
 
-        Carro.velocidadeLimite = 180;  // Fica claro Acessando assim Carro. vc está modificando tudo com static
+        Carro.setVelocidadeLimite(180);  // Quando utilizar um método static: Quando não tiver nenhum objeto pra instanciar
 
         carro1.imprime();
         carro2.imprime();
