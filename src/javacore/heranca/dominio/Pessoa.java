@@ -1,9 +1,9 @@
 package javacore.heranca.dominio;
 
 public class Pessoa {
-    private String nome;
-    private String cpf;
-    private Endereco endereco;
+    protected String nome;  // protected: É protegido fica publico para classes filhas e mesmo pacote.
+    protected String cpf;
+    protected Endereco endereco;
 
     public void imprime() {
         System.out.println("Nome: " + this.nome);
