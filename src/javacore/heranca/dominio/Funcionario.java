@@ -3,12 +3,17 @@ package javacore.heranca.dominio;
 public class Funcionario extends Pessoa {
     private double salario;
 
-    public void imprime(){
+    public Funcionario(String nome) {
+        super(nome);
+    }
+
+    public void imprime() {
         super.imprime();
         System.out.println(this.salario);
     }
-    public void EuPagamento(){
-        System.out.println("Nome: "+this.nome);  // Agora posso acessar o nome diretamente como se fosse os atributos originais dessa classe.
+
+    public void EuPagamento() {
+        System.out.println("Nome: " + this.nome);  // Agora posso acessar o nome diretamente como se fosse os atributos originais dessa classe.
     }
 
     public double getSalario() {
