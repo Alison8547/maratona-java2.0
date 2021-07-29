@@ -11,7 +11,7 @@ public class ProdutoTest02 {
         System.out.println(produto1.getValor());
         System.out.println(produto1.calculaImposto());
         System.out.println("------------");
-        Produto produto2 = new Tomate("Americano",20,"01/01/2022");
+        Produto produto2 = new Tomate("Americano",20);
         System.out.println(produto2.getNome());
         System.out.println(produto2.getValor());
         System.out.println(produto2.calculaImposto());
