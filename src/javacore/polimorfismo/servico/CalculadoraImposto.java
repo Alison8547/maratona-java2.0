@@ -1,27 +1,16 @@
 package javacore.polimorfismo.servico;
 
-import javacore.polimorfismo.dominio.Computador;
-import javacore.polimorfismo.dominio.Tomate;
+import javacore.polimorfismo.dominio.Produto;
+
 
 public class CalculadoraImposto {
 
-    public static void calculaImpostoComputador(Computador computador) {
-        System.out.println("Relatorio imposto computador");
-        double imposto = computador.calculaImposto();
-        System.out.println("Computador: " + computador.getNome());
-        System.out.println("Valor: " + computador.getValor());
+    public static void calculaImposto(Produto produto) {  // Fazendo o método mais generico e aplicando polimorfismo
+        System.out.println("Relatorio imposto...");
+        double imposto = produto.calculaImposto();
+        System.out.println("Produto: " + produto.getNome());
+        System.out.println("Valor: " + produto.getValor());
         System.out.println("Imposto a ser pago: " + imposto);
-
-
-    }
-
-    public static void calculaImpostoTomate(Tomate tomate) {
-        System.out.println("Relatorio imposto computador");
-        double imposto = tomate.calculaImposto();
-        System.out.println("Computador: " + tomate.getNome());
-        System.out.println("Valor: " + tomate.getValor());
-        System.out.println("Imposto a ser pago: " + imposto);
-
 
     }
 }
