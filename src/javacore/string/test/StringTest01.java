@@ -10,6 +10,7 @@ public class StringTest01 {
         System.out.println(nome1 == nome2);
 
         String nome3 = new String("Alison"); // Ninguém usa assim.
-        System.out.println(nome2 == nome3.intern());
+        System.out.println(nome2 == nome3);
+        System.out.println(nome2 == nome3.intern()); // pega o valor por isso dar true
     }
 }
