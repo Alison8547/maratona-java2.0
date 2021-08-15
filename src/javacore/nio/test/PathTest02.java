@@ -1,4 +1,4 @@
-package javacore.nio;
+package javacore.nio.test;
 
 import java.io.IOException;
 import java.nio.file.Files;

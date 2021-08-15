@@ -1,4 +1,4 @@
-package javacore.nio;
+package javacore.nio.test;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
