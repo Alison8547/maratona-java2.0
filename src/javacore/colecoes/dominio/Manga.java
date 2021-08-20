@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Manga implements Comparable<Manga> {
     private Long id;
     private String nome;
-    private double valor;
+    private Double valor;
     private int quantidade;
 
     public Manga(Long id, String nome, double valor, int quantidade) {
