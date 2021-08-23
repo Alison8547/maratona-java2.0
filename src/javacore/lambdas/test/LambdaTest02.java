@@ -7,9 +7,9 @@ import java.util.function.Function;
 public class LambdaTest02 {
     public static void main(String[] args) {
         List<String> strings = List.of("Naruto", "Gon");
-        List<Integer> integers = map(strings, s -> s.length());
+        List<Integer> integers = map(strings, String::length); // method reference quando só tem um método ele simplifica assim.
         System.out.println(integers);
-        List<String> stringsUpperCase = map(strings, s -> s.toUpperCase());
+        List<String> stringsUpperCase = map(strings, String::toUpperCase);
         System.out.println(stringsUpperCase);
     }
 
