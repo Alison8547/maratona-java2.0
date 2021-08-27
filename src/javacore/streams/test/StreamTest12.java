@@ -46,7 +46,7 @@ public class StreamTest12 {
         System.out.println(categoryListMap);
 
         // Isso tudo de codigo acima, apenas usando stream só foi uma linha.
-        final Map<Category, List<LightNovel>> collect = lightNovels.stream().collect(Collectors.groupingBy(LightNovel::getCategory));
+        Map<Category, List<LightNovel>> collect = lightNovels.stream().collect(Collectors.groupingBy(LightNovel::getCategory));
         System.out.println(collect);
     }
 }

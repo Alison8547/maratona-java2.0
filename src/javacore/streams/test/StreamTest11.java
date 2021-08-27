@@ -35,11 +35,11 @@ public class StreamTest11 {
         lightNovels.stream().mapToDouble(LightNovel::getPrice).average().ifPresent(System.out::println);
         System.out.println(lightNovels.stream().collect(Collectors.averagingDouble(LightNovel::getPrice)));
 
-        final DoubleSummaryStatistics collect = lightNovels.stream().collect(Collectors.summarizingDouble(LightNovel::getPrice));
+        DoubleSummaryStatistics collect = lightNovels.stream().collect(Collectors.summarizingDouble(LightNovel::getPrice));
         // Esse codigo acima ele fez com apenas essa linha passando o summarizingDouble pegou o soma, preço minimo, a média e o tamanho.
         System.out.println(collect);
 
-        final String titles = lightNovels.stream()
+        String titles = lightNovels.stream()
                 .map(LightNovel::getTitle)
                 .collect(Collectors.joining(", "));  // Juntando tudo isso é uma string só e delimitando com virgula e espaço
 

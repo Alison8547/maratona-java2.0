@@ -2,16 +2,11 @@ package javacore.streams.test;
 
 import javacore.streams.dominio.Category;
 import javacore.streams.dominio.LightNovel;
-import javacore.streams.dominio.Promotion;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
-import static javacore.streams.dominio.Promotion.*;
-
-public class StreamTest13 {
+public class StreamTest14 {
     private static List<LightNovel> lightNovels = new ArrayList<>(List.of(
             new LightNovel("Tensei Shittara", 8.99, Category.FANTASY),
             new LightNovel("Overlord", 3.99, Category.FANTASY),
@@ -24,14 +19,17 @@ public class StreamTest13 {
     ));
 
     public static void main(String[] args) {
-        Map<Promotion, List<LightNovel>> collect = lightNovels.stream()
-                .collect(Collectors.groupingBy(ln -> ln.getPrice() < 6 ? UNDER_PROMOTION : NORMAL_PRICE));
+        Map<Category, Long> collect = lightNovels.stream()
+                .collect(Collectors.groupingBy(LightNovel::getCategory, Collectors.counting())); // Vai contar quantos de cada tem baseado na categoria
         System.out.println(collect);
 
-        // Map<Category, Map<Promotion, List<LightNovel>>>
-
-        Map<Category, Map<Promotion, List<LightNovel>>> collect1 = lightNovels.stream()
-                .collect(Collectors.groupingBy(LightNovel::getCategory, Collectors.groupingBy(ln -> ln.getPrice() < 6 ? UNDER_PROMOTION : NORMAL_PRICE))); // Agrupando primeiro o category e depois as promotions
+        Map<Category, Optional<LightNovel>> collect1 = lightNovels.stream()
+                .collect(Collectors.groupingBy(LightNovel::getCategory, Collectors.maxBy(Comparator.comparing(LightNovel::getPrice)))); // retorna o maximo preço de cada categoria
         System.out.println(collect1);
+
+        Map<Category, LightNovel> collect2 = lightNovels.stream() // Tirando o Optional
+                .collect(Collectors.groupingBy(LightNovel::getCategory, Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparing(LightNovel::getPrice)), Optional::get)));
+        System.out.println(collect2);
+
     }
 }
