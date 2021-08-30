@@ -1,10 +1,23 @@
 package javacore.concorrencia.test;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 class Counter {
     private int count;
     private AtomicInteger atomicInteger = new AtomicInteger();
+    private Lock lock = new ReentrantLock();
+
+    void increment() {
+        lock.lock();
+        try {
+            count++;
+            atomicInteger.incrementAndGet();
+        } finally {
+            lock.unlock();
+        }
+    }
 
     public int getCount() {
         return count;
@@ -14,10 +27,6 @@ class Counter {
         return atomicInteger;
     }
 
-    void increment() {
-        count++;
-        atomicInteger.incrementAndGet();
-    }
 }
 
 public class AtomicIntegerTest01 {
