@@ -1,7 +1,8 @@
-package javacore.threads.test;
+package javacore.concorrencia.test;
 
-import javacore.threads.dominio.Members;
-import javacore.threads.service.EmailDeliveryService;
+
+import javacore.concorrencia.dominio.Members;
+import javacore.concorrencia.service.EmailDeliveryService;
 
 import javax.swing.*;
 
