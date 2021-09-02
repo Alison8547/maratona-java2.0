@@ -3,8 +3,8 @@ package javacore.padroesdeprojeto.dominio;
 import java.util.HashSet;
 import java.util.Set;
 
-public final class AircraftSingletonEager {
-    private static final AircraftSingletonEager INSTANCE = new AircraftSingletonEager("787-900");
+public final class AircraftSingletonLazy {
+    private static AircraftSingletonLazy INSTANCE;
     private final Set<String> availableSeats = new HashSet<>();
     private final String name;
 
@@ -13,11 +13,18 @@ public final class AircraftSingletonEager {
         availableSeats.add("1B");
     }
 
-    private AircraftSingletonEager(String name) {
+    private AircraftSingletonLazy(String name) {
         this.name = name;
     }
 
-    public static AircraftSingletonEager getINSTANCE() {
+    public static AircraftSingletonLazy getINSTANCE() {
+        if (INSTANCE == null) {
+            synchronized (AircraftSingletonLazy.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new AircraftSingletonLazy("787-900");
+                }
+            }
+        }
         return INSTANCE;
     }
 
