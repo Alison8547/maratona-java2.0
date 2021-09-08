@@ -5,19 +5,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
-    public static Connection getConnection() {
+    public static Connection getConnection() throws SQLException {
         //java.sql = Connection, Statement, ResultSet, DriverManager
         String url = "jdbc:mysql://localhost:3306/anime_store";
         String username = "root";
         String password = "root";
+        return DriverManager.getConnection(url, username, password);
 
-        try {
-            Connection connection = DriverManager.getConnection(url, username, password);
-            System.out.println(connection);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
 }
