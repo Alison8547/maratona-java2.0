@@ -132,4 +132,45 @@ public class ProducerRepository {
         }
 
     }
+
+    public static void showTypeScrollWorking() {
+        String sql = "SELECT * FROM anime_store.producer;";
+        try (Connection conn = ConnectionFactory.getConnection();
+             final Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            log.info("Last row ? '{}'", rs.last());
+            log.info("row number '{}'", rs.getRow());
+            log.info(Producer.builder().id(rs.getInt("id")).name(rs.getString("name")).build());
+
+            log.info("First row ? '{}'", rs.first());
+            log.info("row number '{}'", rs.getRow());
+            log.info(Producer.builder().id(rs.getInt("id")).name(rs.getString("name")).build());
+
+            log.info("Absolute row ? '{}'", rs.absolute(2));
+            log.info("row number '{}'", rs.getRow());
+            log.info(Producer.builder().id(rs.getInt("id")).name(rs.getString("name")).build());
+
+            log.info("Relative row ? '{}'", rs.relative(-1));
+            log.info("row number '{}'", rs.getRow());
+            log.info(Producer.builder().id(rs.getInt("id")).name(rs.getString("name")).build());
+
+            log.info("is last row ? '{}'", rs.isLast());
+            log.info("row number '{}'", rs.getRow());
+
+            log.info("is first row ? '{}'", rs.isFirst());
+            log.info("row number '{}'", rs.getRow());
+
+            log.info("Last row ? '{}'", rs.last());
+            log.info("--------------");
+            rs.next();
+
+            log.info("is afterLast row ? '{}'", rs.isAfterLast());
+            while (rs.previous()){
+                log.info(Producer.builder().id(rs.getInt("id")).name(rs.getString("name")).build());
+            }
+        } catch (SQLException e) {
+            log.error("Error while trying to find all producers", e);
+        }
+    }
 }
