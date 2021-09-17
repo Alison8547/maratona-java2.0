@@ -40,6 +40,10 @@ public class ProducerService {
         ProducerRepository.showTypeScrollWorking();
     }
 
+    public static List<Producer> findByNameAndUpdateUpperCase(String name) {
+        return ProducerRepository.findByNameAndUpdateUpperCase(name);
+    }
+
     private static void requireValidId(Integer id) {
         if (id == null || id <= 0) {
             throw new IllegalArgumentException("Invalid value for id");

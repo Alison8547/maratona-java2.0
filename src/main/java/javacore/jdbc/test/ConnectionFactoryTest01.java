@@ -5,6 +5,8 @@ import javacore.jdbc.dominio.Producer;
 import javacore.jdbc.service.ProducerService;
 import lombok.extern.log4j.Log4j2;
 
+import java.util.List;
+
 @Log4j2
 public class ConnectionFactoryTest01 {
     public static void main(String[] args) {
@@ -19,7 +21,9 @@ public class ConnectionFactoryTest01 {
         //  log.info("Producers found '{}'", producers);
         //  ProducerService.showProducerMetaData();
         // ProducerService.showDriverMetaData();
-        ProducerService.showTypeScrollWorking();
+//        ProducerService.showTypeScrollWorking();
+        List<Producer> producers = ProducerService.findByNameAndUpdateUpperCase("Deen");
+        log.info("Producers found '{}'", producers);
 
     }
 }
