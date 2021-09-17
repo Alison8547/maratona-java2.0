@@ -10,6 +10,11 @@ public class ProducerService {
         ProducerRepository.save(producer);
     }
 
+    public static void saveTransaction(List<Producer> producers) {
+        ProducerRepository.saveTransaction(producers);
+    }
+
+
     public static void delete(int id) {
         requireValidId(id);
         ProducerRepository.delete(id);
