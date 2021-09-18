@@ -23,8 +23,7 @@ public class ProducerService {
             case 4:
                 update();
                 break;
-            default:
-                throw new IllegalArgumentException("Not a valid operation");
+
         }
     }
 
