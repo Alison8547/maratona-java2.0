@@ -3,6 +3,7 @@ package javacore.crud.service;
 import javacore.crud.dominio.Producer;
 import javacore.crud.repository.ProducerRepository;
 
+import java.util.Optional;
 import java.util.Scanner;
 
 public class ProducerService {
@@ -18,6 +19,9 @@ public class ProducerService {
                 break;
             case 3:
                 save();
+                break;
+            case 4:
+                update();
                 break;
             default:
                 throw new IllegalArgumentException("Not a valid operation");
@@ -47,5 +51,26 @@ public class ProducerService {
         String name = SCANNER.nextLine();
         Producer producer = Producer.builder().name(name).build();
         ProducerRepository.save(producer);
+    }
+
+    private static void update() {
+        System.out.println("Type the id of the object you want to update");
+        Optional<Producer> producerOptional = ProducerRepository.findById(Integer.parseInt(SCANNER.nextLine()));
+        if (producerOptional.isEmpty()) {
+            System.out.println("Producer not found");
+            return;
+        }
+        Producer producerFromDb = producerOptional.get();
+        System.out.println("Producer found " + producerFromDb);
+        System.out.println("Type the new name or enter to keep the same");
+        String name = SCANNER.nextLine();
+        name = name.isEmpty() ? producerFromDb.getName() : name;
+
+        Producer producerToUpdate = Producer.builder()
+                .id(producerFromDb.getId())
+                .name(name)
+                .build();
+
+        ProducerRepository.update(producerToUpdate);
     }
 }
