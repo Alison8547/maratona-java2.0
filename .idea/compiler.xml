@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="maratona-java2.0" target="11" />
+      <module name="maratona-java2.0" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>
